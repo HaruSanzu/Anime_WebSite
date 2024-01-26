@@ -24,7 +24,8 @@ public class User {
     private String email;
     private String wishlist;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Reviews> reviews = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "user_id")
+    private List<Reviews> reviews;
 
 }

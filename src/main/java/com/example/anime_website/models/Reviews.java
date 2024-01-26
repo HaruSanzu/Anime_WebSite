@@ -17,7 +17,9 @@ public class Reviews {
     private Integer id;
     private String review;
 
-    @ManyToOne
-    @JoinColumn(name = "anime_id")
-    private Anime_Multimedia anime;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Anime_Multimedia anime_multimedia;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User user;
 }

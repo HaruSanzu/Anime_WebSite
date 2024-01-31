@@ -18,6 +18,7 @@ import java.util.List;
 @Table(name = "user")
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String username;
     private String password;
@@ -25,7 +26,6 @@ public class User {
     private String wishlist;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "user_id")
     private List<Reviews> reviews;
 
 }

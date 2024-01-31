@@ -30,7 +30,6 @@ public class Anime_Multimedia {
     private String reviews;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "anime_id")
     @JsonIgnore
     private List<Reviews> review = new ArrayList<>();
 
